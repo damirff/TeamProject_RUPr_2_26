@@ -1,0 +1,27 @@
+def calculator():
+    print("Добро пожаловать в калькулятор!")
+    try:
+        num1 = float(input("Введите первое число: "))
+        num2 = float(input("Введите второе число: "))
+        operation = input("Выберите операцию (+, -, *, /): ")
+
+        if operation == '+':
+            result = num1 + num2
+        elif operation == '-':
+            result = num1 - num2
+        elif operation == '*':
+            result = num1 * num2
+        elif operation == '/':
+            result = num1 / num2
+        else:
+            raise ValueError("Неверная операция")
+
+        print(f"Результат: {result}")
+    except ValueError as e:
+        print(f"Ошибка: {e}. Пожалуйста, введите число.")
+    except ZeroDivisionError:
+        print("Ошибка: деление на ноль невозможно.")
+
+if __name__ == "__main__":
+    calculator()
+
